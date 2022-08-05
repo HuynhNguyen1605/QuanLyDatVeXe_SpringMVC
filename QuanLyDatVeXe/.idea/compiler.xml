@@ -14,7 +14,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="JobSearchingSpringMVC" options="-endorseddirs &quot;F:\Learning\Java Programming\Project\JobSearchingSpringMVC_v2\JobSearchingSpringMVC\target/endorsed&quot;" />
-      <module name="QuanLyDatVeXe" options="-endorseddirs N:\LapTrinhJaVa\BTL\QuanLyDatVeXe\QuanLyDatVeXe\target/endorsed" />
+      <module name="QuanLyDatVeXe" options="-endorseddirs N:\LapTrinhJaVa\Project\QuanLyDatVeXe_SpringMVC\QuanLyDatVeXe\target/endorsed" />
     </option>
   </component>
 </project>

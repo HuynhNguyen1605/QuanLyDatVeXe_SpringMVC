@@ -26,9 +26,9 @@ and open the template in the editor.
         <put-attribute name="content" value="/WEB-INF/pages/login.jsp" />
     </definition>
 
-    <definition name="datve" extends="baseLayout">
+    <definition name="dat-ve" extends="baseLayout">
         <put-attribute name="title" value="Trang chủ" />
-        <put-attribute name="content" value="/WEB-INF/pages/datve.jsp" />
+        <put-attribute name="content" value="/WEB-INF/pages/dat-ve.jsp" />
     </definition>
 
 </tiles-definitions>

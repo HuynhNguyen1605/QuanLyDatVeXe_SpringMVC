@@ -46,9 +46,7 @@
 
 <!-- End Navbar -->
 <!-- -------- START HEADER 7 w/ text and video ------- -->
-<div class="container">
-    <tiles:insertAttribute name="content"/>
-</div>
+<tiles:insertAttribute name="content"/>
 
 <tiles:insertAttribute name="footer"/>
 

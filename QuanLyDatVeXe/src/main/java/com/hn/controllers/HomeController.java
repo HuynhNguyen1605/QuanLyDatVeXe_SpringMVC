@@ -28,4 +28,14 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
+    @RequestMapping("/dat-ve")
+    public String datVe(Model model) {
+        return "dat-ve";
+    }
+
 }

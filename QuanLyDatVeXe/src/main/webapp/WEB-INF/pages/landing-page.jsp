@@ -74,7 +74,7 @@
                             <h5 class="font-weight-normal">
                                 Hãy tìm kiếm chuyến đi của bạn
                             </h5>
-                            <a href="<c:url value="/datve"/>">
+                            <a href="<c:url value="/dat-ve"/>">
                                 <button type=" button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Đặt vé ngay
                                 </button>
                             </a>
