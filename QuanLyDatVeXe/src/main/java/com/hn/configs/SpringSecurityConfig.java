@@ -61,10 +61,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public JavaMailSender configureJavaMailSender(){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setUsername("dev.nhn1909@gmail.com");
-//        mailSender.setPassword("NguyenHoangNamDev1909");
-        mailSender.setPassword("vrbbqbxxvhakjzve");
+        mailSender.setHost("");
+        mailSender.setUsername("");
+//        mailSender.setPassword("");
+        mailSender.setPassword("");
 
         mailSender.setPort(587);
 
@@ -93,8 +93,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password");
 
-        http.formLogin().successHandler(this.loginHandler)
-                .failureUrl("/login?error");
+        http.formLogin().successHandler(this.loginHandler);
+//                .failureUrl("/login?error");
 
         http.logout().logoutSuccessHandler(this.logoutHandler);
 
@@ -102,6 +102,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers("/").permitAll();
+//                .antMatchers("/me/**").authenticated()
 //                .antMatchers("/api/**").authenticated()
 //                .antMatchers("/candidate/**").access("hasAnyRole('ROLE_UV')")
 //                .antMatchers("/employer/**").access("hasAnyRole('ROLE_NTD')")

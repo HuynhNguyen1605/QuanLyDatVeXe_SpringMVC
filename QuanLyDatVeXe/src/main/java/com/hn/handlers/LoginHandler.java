@@ -20,7 +20,7 @@ import java.io.IOException;
 
 
 /**
- * @author duonghuuthanh
+ * @author
  */
 @Component
 public class LoginHandler implements AuthenticationSuccessHandler {

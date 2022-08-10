@@ -2,18 +2,20 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <header class="bg-gradient-dark">
-    <div class="page-header min-vh-75" style="background-image: url('');">
+    <div class="page-header min-vh-75" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80')">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mx-auto my-auto">
-                    <h1 class="text-white">aaa</h1>
+                    <h1 class="text-white">Chuyến đi của mọi gia đình</h1>
                     <p class="lead mb-4 text-white opacity-8">Mang đến cho quý khách hàng những trải nghiệm tốt nhất</p>
-                    <button type="submit" class="btn bg-white text-dark">Create Account</button>
+                    <a href="<c:url value="/dang-ky"></c:url> ">
+                        <button type="submit" class="btn bg-white text-dark">Create Account</button>
+                    </a>
                     <h6 class="text-white mb-2 mt-5">Find us on</h6>
                     <div class="d-flex justify-content-center">
-                        <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
+                        <a href="https://www.facebook.com/huynhnguyennnnnn/"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
+                        <a href="https://www.instagram.com/huyhnguyenn_165/"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
                         <a href="javascript:;"><i class="fab fa-google-plus text-lg text-white"></i></a>
                     </div>
                 </div>
@@ -23,7 +25,7 @@
 </header>
 <!-- -------- END HEADER 7 w/ text and video ------- -->
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
-    <!-- Section with four info areas left & one card right with image and waves -->
+    <!-- Section with four info areas left  & one card right with image and waves -->
     <section class="py-7">
         <div class="container">
             <div class="row align-items-center">
@@ -57,7 +59,7 @@
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">3p</i>
                                 <h5>Hỗ trợ mọi lúc mọi nơi</h5>
-                                <p>Có đội ngũ hoạt động 24/24 phúc vụ mọi lúc cho khách hàng</p>
+                                <p>Có đội ngũ hoạt động 24/24 phục vụ mọi lúc cho khách hàng.</p>
                             </div>
                         </div>
                     </div>
@@ -92,7 +94,7 @@
             <div class="row">
                 <div class="col-md-8 text-start mb-5 mt-5">
                     <h3 class="text-white z-index-1 position-relative">Những tuyến đi chính</h3>
-                    <p class="text-white opacity-8 mb-0">Những chuyến đi chính của nhà xe</p>
+                    <p class="text-white opacity-8 mb-0">Những tuyến đi chính của nhà xe</p>
                 </div>
             </div>
             <div class="row">
@@ -100,17 +102,17 @@
                     <div class="card card-profile mt-4">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
-                                <a href="javascript:;">
+                                <a href="">
                                     <div class="p-3 pe-md-0">
                                         <img class="w-100 border-radius-md shadow-lg"
-                                             src="../resources/img/shapes/team-5.jpg" alt="image">
+                                             src="https://cms-i.autodaily.vn/wp-content/uploads/2012/09/07/Noithat-Mobihomne-HB120SLD.jpg" width="160" height="160" alt="image">
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                                 <div class="card-body ps-lg-0">
-                                    <h5 class="mb-0">Emma Roberts</h5>
-                                    <h6 class="text-info">UI Designer</h6>
+                                    <h5 class="mb-0">Sài Gòn - Đà Lạt</h5>
+                                    <h6 class="text-info">Từ 150.000đ</h6>
                                     <p class="mb-0">Artist is a term applied to a person who engages in an activity
                                         deemed to be an art.</p>
                                 </div>
@@ -122,17 +124,17 @@
                     <div class="card card-profile mt-lg-4 mt-5">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
-                                <a href="javascript:;">
+                                <a href="">
                                     <div class="p-3 pe-md-0">
-                                        <img class="w-100 border-radius-md shadow-lg" src="../assets/img/bruce-mars.jpg"
-                                             alt="image">
+                                        <img class="w-100 border-radius-md shadow-lg" src="https://storage.googleapis.com/blogvxr-uploads/2022/03/noi-that-giuong-doi-phong-phu-3-1080x720.jpg"
+                                             width="160" height="160" alt="image">
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                                 <div class="card-body ps-lg-0">
-                                    <h5 class="mb-0">William Pearce</h5>
-                                    <h6 class="text-info">Boss</h6>
+                                    <h5 class="mb-0">Sài Gòn - Nha Trang</h5>
+                                    <h6 class="text-info">Từ 231.000đ</h6>
                                     <p class="mb-0">Artist is a term applied to a person who engages in an activity
                                         deemed to be an art.</p>
                                 </div>
@@ -146,17 +148,17 @@
                     <div class="card card-profile mt-4 z-index-2">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
-                                <a href="javascript:;">
+                                <a href="">
                                     <div class="p-3 pe-md-0">
                                         <img class="w-100 border-radius-md shadow-lg"
-                                             src="../assets/img/ivana-squares.jpg" alt="image">
+                                             src="https://amthucvadulich.net/wp-content/uploads/xe-giuong-nam-doi-di-da-lat.jpg" width="160" height="160" alt="image">
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                                 <div class="card-body ps-lg-0">
-                                    <h5 class="mb-0">Ivana Flow</h5>
-                                    <h6 class="text-info">Athlete</h6>
+                                    <h5 class="mb-0">Sài Gòn - Phan Thiết </h5>
+                                    <h6 class="text-info">Từ 170.000đ</h6>
                                     <p class="mb-0">Artist is a term applied to a person who engages in an activity
                                         deemed to be an art.</p>
                                 </div>
@@ -168,17 +170,17 @@
                     <div class="card card-profile mt-lg-4 mt-5 z-index-2">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
-                                <a href="javascript:;">
+                                <a href="">
                                     <div class="p-3 pe-md-0">
                                         <img class="w-100 border-radius-md shadow-lg"
-                                             src="../assets/img/ivana-square.jpg" alt="image">
+                                             src="https://saigonstartravel.com/wp-content/uploads/2021/04/thue-xe-giuong-nam-2.jpg" width="160" height="160" alt="image">
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                                 <div class="card-body ps-lg-0">
-                                    <h5 class="mb-0">Marquez Garcia</h5>
-                                    <h6 class="text-info">JS Developer</h6>
+                                    <h5 class="mb-0">Nha Trang - Sài Gòn</h5>
+                                    <h6 class="text-info">Từ 250.000đ</h6>
                                     <p class="mb-0">Artist is a term applied to a person who engages in an activity
                                         deemed to be an art.</p>
                                 </div>
@@ -193,23 +195,12 @@
     <section class="pt-4 pb-6" id="count-stats">
         <div class="row justify-content-center text-center">
             <div class="col-md-3">
-                <h1 class="text-gradient text-info" id="state1" countTo="5234">0</h1>
-                <h5>Projects</h5>
-                <p>Of “high-performing” level are led by a certified project manager</p>
-            </div>
-            <div class="col-md-3">
-                <h1 class="text-gradient text-info"><span id="state2" countTo="3400">0</span>+</h1>
-                <h5>Hours</h5>
-                <p>That meets quality standards required by our users</p>
-            </div>
-            <div class="col-md-3">
                 <h1 class="text-gradient text-info"><span id="state3" countTo="24">0</span>/7</h1>
                 <h5>Support</h5>
                 <p>Actively engage team members that finishes on time</p>
             </div>
         </div>
-</div>
-</section>
+    </section>
 <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 <section class="my-5 pt-5">
     <div class="container">
@@ -236,7 +227,7 @@
             </div>
             <div class="col-md-5 ms-auto">
                 <div class="position-relative">
-                    <img class="max-width-50 w-100 position-relative z-index-2" src="../assets/img/macbook.png"
+                    <img class="max-width-50 w-100 position-relative z-index-2" src="https://chothuexedulich.org/wp-content/uploads/2020/12/thue-xe-giuong-nam-limousine-gia-re-tai-tphcm-6.jpg"
                          alt="image">
                 </div>
             </div>

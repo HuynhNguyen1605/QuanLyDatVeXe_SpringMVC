@@ -16,7 +16,7 @@ import java.io.IOException;
 
 /**
  *
- * @author duonghuuthanh
+ * @author
  */
 @Component
 public class LogoutHandler implements LogoutSuccessHandler {
@@ -25,7 +25,7 @@ public class LogoutHandler implements LogoutSuccessHandler {
     public void onLogoutSuccess(HttpServletRequest request, 
             HttpServletResponse response, Authentication a) throws IOException, ServletException {
         request.getSession().removeAttribute("currentUser");
-        response.sendRedirect("/JobSearchingSpringMVC/login");
+        response.sendRedirect("/QuanLyDatVeXe/login");
     }
     
 }

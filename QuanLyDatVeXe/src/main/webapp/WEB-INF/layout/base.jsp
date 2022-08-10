@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<c:url value="/resources/img/apple-icon.png" />">
     <link rel="icon" type="image/png" href="<c:url value="/resources/img/favicon.png" />">
     <title>
-        Material Kit 2 by Creative Tim
+        Car Ticket
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -36,6 +36,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="<c:url value="/resources/css/material-kit.css?v=3.0.4"/>" rel="stylesheet"/>
+    <link href="<c:url value="/resources/css/register.css"/> " rel="stylesheet">
+    <link href="<c:url value="/resources/css/nicepage.css"/> " rel="stylesheet">
 
 </head>
 
@@ -59,6 +61,8 @@
 <script src="<c:url value="/resources/js/plugins/parallax.min.js" />"></script>
 <script src="<c:url value="/resources/js/material-kit.min.js?v=3.0.4" />" type="text/javascript"></script>
 
+<script src="<c:url value="/resources/js/jquery.js"/>  " type="text/javascript"></script>
+<script src="<c:url value="/resources/js/nicepage.js"/> " type="text/javascript"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
 <script>

@@ -55,15 +55,20 @@ public class AccountRepositoryImpl implements AccountRepository {
     @Override
     public Account getByUsername(String username) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Account> query = builder.createQuery(Account.class);
-        Root root = query.from(Account.class);
-        query = query.select(root);
+        Query q = session.createQuery("From Account WHERE username=:username");
+        q.setParameter("username", username);
 
-        query = query.where(builder.equal(root.get("username").as(String.class), username));
-
-        org.hibernate.query.Query q = session.createQuery(query);
         return (Account) q.getSingleResult();
+
+//        CriteriaBuilder builder = session.getCriteriaBuilder();
+//        CriteriaQuery<Account> query = builder.createQuery(Account.class);
+//        Root root = query.from(Account.class);
+//        query = query.select(root);
+//
+//        query = query.where(builder.equal(root.get("username").as(String.class), username));
+//
+//        org.hibernate.query.Query q = session.createQuery(query);
+//        return (Account) q.getSingleResult();
     }
 
     @Override

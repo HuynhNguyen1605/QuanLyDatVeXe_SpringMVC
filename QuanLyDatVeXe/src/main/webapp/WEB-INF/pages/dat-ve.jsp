@@ -10,19 +10,19 @@
 
 
 <header class="bg-gradient-dark">
-    <div class="page-header min-vh-75" style="background-image: url('');">
+    <div class="page-header min-vh-75" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80')">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mx-auto my-auto">
-                    <h1 class="text-white">aaa</h1>
+                    <h1 class="text-white">Chuyến đi của mọi gia đình</h1>
                     <p class="lead mb-4 text-white opacity-8">Mang đến cho quý khách hàng những trải nghiệm tốt nhất</p>
                     <button type="submit" class="btn bg-white text-dark">Create Account</button>
                     <h6 class="text-white mb-2 mt-5">Find us on</h6>
                     <div class="d-flex justify-content-center">
-                        <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-google-plus text-lg text-white"></i></a>
+                        <a href=""><i class="fab fa-facebook text-lg text-white me-4"></i></a>
+                        <a href=""><i class="fab fa-instagram text-lg text-white me-4"></i></a>
+                        <a href=""><i class="fab fa-google-plus text-lg text-white"></i></a>
                     </div>
                 </div>
             </div>
@@ -34,42 +34,41 @@
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
         <div class="container">
+            <div class="input-group input-group-outline my-3">
+                <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Nhập địa chỉ</label>
+                    <input name="Search" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary">
+                    <i class="fas fa-search me-1">Tìm kiếm</i>
+                </button>
+            </div>
             <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="th-sm">Name
+                    <th class="th-sm">Tên chuyến đi
                     </th>
-                    <th class="th-sm">Price
+                    <th class="th-sm">Giá vé
                     </th>
-                    <th class="th-sm">Departure Date
+                    <th class="th-sm">Thời gian đi
+                    </th>
+                    <th class="th-sm">Thời gian đến
+                    </th>
+                    <th class="th-sm">Số chỗ trống
                     </th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${coachLines}" var="coachLine">
+                <c:forEach items="${coachLineList}" var="coachLine">
                     <tr>
                         <td>${coachLine.name}</td>
                         <td>${coachLine.price}</td>
                         <td>${coachLine.departureDate}</td>
+                        <td>${coachLine.arrivalDate}</td>
+                        <td>${coachLine.remainingSeats}</td>
                     </tr>
                 </c:forEach>
                 </tbody>
-                <tfoot>
-                <tr>
-                    <th>Name
-                    </th>
-                    <th>Position
-                    </th>
-                    <th>Office
-                    </th>
-                    <th>Age
-                    </th>
-                    <th>Start date
-                    </th>
-                    <th>Salary
-                    </th>
-                </tr>
-                </tfoot>
             </table>
         </div>
     </section>
@@ -79,16 +78,6 @@
     <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
     <section class="pt-4 pb-6" id="count-stats">
         <div class="row justify-content-center text-center">
-            <div class="col-md-3">
-                <h1 class="text-gradient text-info" id="state1" countTo="5234">0</h1>
-                <h5>Projects</h5>
-                <p>Of “high-performing” level are led by a certified project manager</p>
-            </div>
-            <div class="col-md-3">
-                <h1 class="text-gradient text-info"><span id="state2" countTo="3400">0</span>+</h1>
-                <h5>Hours</h5>
-                <p>That meets quality standards required by our users</p>
-            </div>
             <div class="col-md-3">
                 <h1 class="text-gradient text-info"><span id="state3" countTo="24">0</span>/7</h1>
                 <h5>Support</h5>
@@ -122,7 +111,7 @@
                 </div>
                 <div class="col-md-5 ms-auto">
                     <div class="position-relative">
-                        <img class="max-width-50 w-100 position-relative z-index-2" src="../assets/img/macbook.png"
+                        <img class="max-width-50 w-100 position-relative z-index-2" src="https://chothuexedulich.org/wp-content/uploads/2020/12/thue-xe-giuong-nam-limousine-gia-re-tai-tphcm-6.jpg"
                              alt="image">
                     </div>
                 </div>

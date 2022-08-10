@@ -5,15 +5,21 @@
  */
 package com.hn.controllers;
 
+import com.hn.pojo.CoachLine;
 import com.hn.service.AccountService;
+import com.hn.service.CoachLineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
- * @author Lightning
+ * @author
  */
 @Controller
 @ControllerAdvice
@@ -22,10 +28,13 @@ public class HomeController {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private CoachLineService coachLineService;
+
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("sucMsg", model.asMap().get("sucMsg"));
-        return "index";
+        return "landing-page";
     }
 
     @RequestMapping("/login")
@@ -34,8 +43,23 @@ public class HomeController {
     }
 
     @RequestMapping("/dat-ve")
+
     public String datVe(Model model) {
+        List<CoachLine> coachLineList = coachLineService.getCoachLines(null, 0);
+
+        model.addAttribute(coachLineList);
         return "dat-ve";
+    }
+
+    @RequestMapping("/dang-ky")
+    public String dangKy(Model model) {
+        return "dang-ky";
+    }
+
+    @ModelAttribute
+    public void addAttributes(Model model, Authentication authentication) {
+        if (authentication != null)
+            model.addAttribute("currentUser", this.accountService.getByUsername(authentication.getName()));
     }
 
 }

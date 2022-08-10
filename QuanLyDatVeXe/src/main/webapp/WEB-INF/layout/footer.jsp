@@ -43,7 +43,7 @@
             <h6 class="text-sm">Resources</h6>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://iradesign.io/" target="_blank">
+                <a class="nav-link" href="" target="_blank">
                   Illustrations
                 </a>
               </li>
@@ -55,7 +55,7 @@
             <h6 class="text-sm">Help & Support</h6>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/contact-us" target="_blank">
+                <a class="nav-link" href="" target="_blank">
                   Contact Us
                 </a>
               </li>
@@ -67,7 +67,7 @@
             <h6 class="text-sm">Legal</h6>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/terms-of-service" target="_blank">
+                <a class="nav-link" href="" target="_blank">
                   Terms & Conditions
                 </a>
               </li>
@@ -79,7 +79,7 @@
             <p class="text-dark my-4 text-sm font-weight-normal">
               All rights reserved. Copyright © <script>
                 document.write(new Date().getFullYear())
-              </script> Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+              </script> Car Ticket Service <a href="" target="_blank">Car Ticket</a>.
             </p>
           </div>
         </div>
