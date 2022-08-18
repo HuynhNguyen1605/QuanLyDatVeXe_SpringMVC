@@ -1,5 +1,6 @@
 package com.hn.service.impl;
 
+import com.cloudinary.utils.ObjectUtils;
 import com.hn.pojo.Account;
 import com.hn.repository.AccountRepository;
 import com.hn.service.AccountService;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.cloudinary.Cloudinary;
 
+import java.io.IOException;
 import java.util.*;
 
 @Service("userDetailsService")
@@ -29,41 +31,38 @@ public class AccountServiceImpl implements AccountService {
     private Cloudinary cloudinary;
 
     @Override
-    public Account getById(int userId) {
-        return this.accountRepository.getById(userId);
+    public Account getById(int id) {
+        return this.accountRepository.getById(id);
     }
 
     @Override
-    @Transactional
-    public boolean addOrUpdate(Account user) {
-        String pass = user.getPassword();
-        user.setPassword(this.passwordEncoder.encode(pass));
+    public List<Account> getAccounts(Map<String, String> params, int page) {
+        return this.accountRepository.getAccounts(params,page);
+    }
 
-        String avatar = user.getAvatar();
+    @Override
+    public boolean addOrUpdate(Account account) {
+        String pass = account.getPassword();
+        account.setPassword(this.passwordEncoder.encode(pass));
 
-//        if (!user.getFile().isEmpty()) {
-//            Map r = null;
-//            try {
-//                r = this.cloudinary.uploader().upload(user.getFile().getBytes(),
-//                        ObjectUtils.asMap("resource_type", "auto"));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            if (r != null)
-//                user.setAvatar((String) r.get("secure_url"));
-//            else
-//                user.setAvatar(avatar);
-//        }
-//
-//        String sDate = String.format("%02d/%02d/%04d", user.getDay(), user.getMonth(), user.getYear());
-//        try {
-//            user.setDob(utils.stringToDate(sDate, "dd/MM/yyyy"));
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+        String avatar = account.getAvatar();
 
-        return this.accountRepository.addOrUpdate(user);
+        if (!account.getFile().isEmpty()) {
+            Map r = null;
+            try {
+                r = this.cloudinary.uploader().upload(account.getFile().getBytes(),
+                        ObjectUtils.asMap("resource_type", "auto"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (r != null)
+                account.setAvatar((String) r.get("secure_url"));
+            else
+                account.setAvatar(avatar);
+        }
+
+        return this.accountRepository.addOrUpdate(account);
     }
 
     @Override
@@ -104,6 +103,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public int getMaxItemsInPage() {
         return this.accountRepository.getMaxItemsInPage();
+    }
+
+    @Override
+    public int countAccount() {
+        return 0;
     }
 
     @Override

@@ -1,13 +1,12 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
-  Date: 01/08/2022
-  Time: 10:09 CH
+  Date: 16/08/2022
+  Time: 4:03 CH
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header class="bg-gradient-dark">
     <div class="page-header min-vh-75"
@@ -33,43 +32,55 @@
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
-        <h1 class="text-center">Danh sách chuyến xe</h1>
         <div class="container">
-            <div class="input-group input-group-outline my-3">
-                <div class="input-group input-group-outline my-3">
-                    <label class="form-label">Nhập tên chuyến đi cần tìm</label>
-                    <input name="Search" class="form-control">
+            <h1 class="text-center">Trang chủ tài xế</h1>
+            <div class="row">
+                <div class="table-responsive table-hover">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <table class="table table-striped table-bordered table-sm table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Tên đăng nhâp</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Email</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Số điện thoại</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Ảnh đại diện</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Họ và tên</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Địa chỉ</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Giới tính</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Loại tài khoản</th>
+                                        <td></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn bg-gradient-light">
-                    <a href="<c:url value=""/>">
-                        <i class="fas fa-search me-1">Tìm kiếm</i>
-                    </a>
-                </button>
             </div>
-            <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th class="th-sm">Tên chuyến đi
-                    </th>
-                    <th class="th-sm">Thời gian đi
-                    </th>
-                    <th class="th-sm">Thời gian đến
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${coachLineList}" var="coachLine">
-                    <tr>
-                        <td>${coachLine.name}</td>
-                        <td>${coachLine.departureDate}</td>
-                        <td>${coachLine.arrivalDate}</td>
-                        <td>
-                            <a href="<c:url value="/coach-line"/>?id=${coachLine.id}">Xem chi tiết</a>
-                        </td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
         </div>
     </section>
     <!-- END Section with four info areas left & one card right with image and waves -->

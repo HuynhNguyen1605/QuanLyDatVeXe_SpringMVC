@@ -6,24 +6,10 @@
 package com.hn.pojo;
 
 import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -43,23 +29,37 @@ public class Ticket implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private int id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "name")
     private String name;
+
+    @Basic
+    @Column(name = "price")
+    private double price;
+
+    @Basic
+    @Column(name = "amount")
+    private int amount;
+
+    @Basic
+    @Column(name = "total_price")
+    private double totalPrice;
+
     @JoinColumn(name = "coach_line_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private CoachLine coachLineId;
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    private CoachLine coachLine;
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Customer customerId;
+    private Customer customer;
     @JoinColumn(name = "staff_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Staff staffId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ticketId")
-    private Collection<TicketDetail> ticketDetailCollection;
+    @ManyToOne
+//    @ManyToOne(optional = false)
+    private Staff staff;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ticketId")
+//    private Collection<TicketDetail> ticketDetailCollection;
 
     public Ticket() {
     }
@@ -73,11 +73,11 @@ public class Ticket implements Serializable {
         this.name = name;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -89,62 +89,65 @@ public class Ticket implements Serializable {
         this.name = name;
     }
 
-    public CoachLine getCoachLineId() {
-        return coachLineId;
+    public CoachLine getCoachLine() {
+        return coachLine;
     }
 
-    public void setCoachLineId(CoachLine coachLineId) {
-        this.coachLineId = coachLineId;
+    public void setCoachLine(CoachLine coachLineId) {
+        this.coachLine = coachLineId;
     }
 
-    public Customer getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Customer customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customerId) {
+        this.customer = customerId;
     }
 
-    public Staff getStaffId() {
-        return staffId;
+    public Staff getStaff() {
+        return staff;
     }
 
-    public void setStaffId(Staff staffId) {
-        this.staffId = staffId;
+    public void setStaff(Staff staffId) {
+        this.staff = staffId;
     }
 
-    @XmlTransient
-    public Collection<TicketDetail> getTicketDetailCollection() {
-        return ticketDetailCollection;
-    }
-
-    public void setTicketDetailCollection(Collection<TicketDetail> ticketDetailCollection) {
-        this.ticketDetailCollection = ticketDetailCollection;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ticket)) {
-            return false;
-        }
-        Ticket other = (Ticket) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @XmlTransient
+//    public Collection<TicketDetail> getTicketDetailCollection() {
+//        return ticketDetailCollection;
+//    }
+//
+//    public void setTicketDetailCollection(Collection<TicketDetail> ticketDetailCollection) {
+//        this.ticketDetailCollection = ticketDetailCollection;
+//    }
 
     @Override
     public String toString() {
         return "com.hn.pojo.Ticket[ id=" + id + " ]";
     }
-    
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }

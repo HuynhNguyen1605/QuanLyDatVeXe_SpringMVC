@@ -18,22 +18,62 @@ and open the template in the editor.
 
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="Trang chủ" />
-        <put-attribute name="content" value="/WEB-INF/pages/landing-page.jsp" />
+        <put-attribute name="content" value="/WEB-INF/pages/index.jsp" />
     </definition>
 
     <definition name="login" extends="baseLayout">
-        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="title" value="Trang đăng nhập" />
         <put-attribute name="content" value="/WEB-INF/pages/login.jsp" />
     </definition>
 
     <definition name="dat-ve" extends="baseLayout">
-        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="title" value="Trang đặt vé" />
         <put-attribute name="content" value="/WEB-INF/pages/dat-ve.jsp" />
     </definition>
 
+    <definition name="chi-tiet-chuyen-di" extends="baseLayout">
+        <put-attribute name="title" value="Trang chi tiết chuyến đi" />
+        <put-attribute name="content" value="/WEB-INF/pages/chi-tiet-chuyen-di.jsp" />
+    </definition>
+
+    <definition name="chi-tiet-tai-khoan" extends="baseLayout">
+        <put-attribute name="title" value="Trang chi tiết tài khoản" />
+        <put-attribute name="content" value="/WEB-INF/pages/chi-tiet-tai-khoan.jsp" />
+    </definition>
+
     <definition name="dang-ky" extends="baseLayout">
-        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="title" value="Trang đăng ký" />
         <put-attribute name="content" value="/WEB-INF/pages/dang-ky.jsp" />
+    </definition>
+
+    <definition name="gio-hang" extends="baseLayout">
+        <put-attribute name="title" value="Trang giỏ hàng" />
+        <put-attribute name="content" value="/WEB-INF/pages/gio-hang.jsp" />
+    </definition>
+
+    <definition name="quan-ly-tai-khoan" extends="baseLayout">
+        <put-attribute name="title" value="Trang quản lý tài khoản" />
+        <put-attribute name="content" value="/WEB-INF/pages/quan-ly-tai-khoan.jsp" />
+    </definition>
+
+    <definition name="sua-tai-khoan" extends="baseLayout">
+        <put-attribute name="title" value="Trang sửa tài khoản" />
+        <put-attribute name="content" value="/WEB-INF/pages/sua-tai-khoan.jsp" />
+    </definition>
+
+    <definition name="tai-xe" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ tài xế" />
+        <put-attribute name="content" value="/WEB-INF/pages/tai-xe.jsp" />
+    </definition>
+
+    <definition name="trang-chu-admin" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ admin" />
+        <put-attribute name="content" value="/WEB-INF/pages/trang-chu-admin.jsp" />
+    </definition>
+
+    <definition name="trang-bat-dau" extends="baseLayout">
+        <put-attribute name="title" value="Trang bắt đầu" />
+        <put-attribute name="content" value="/WEB-INF/pages/trang-bat-dau.jsp" />
     </definition>
 
 

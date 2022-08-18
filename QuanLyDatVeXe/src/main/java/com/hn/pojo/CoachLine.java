@@ -66,7 +66,7 @@ public class CoachLine implements Serializable {
     private Date arrivalDate;
     @Column(name = "remaining_seats")
     private Integer remainingSeats;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "coachLineId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "coachLine")
     private Collection<Ticket> ticketCollection;
     @JoinColumn(name = "coachway_id", referencedColumnName = "id")
     @ManyToOne(optional = false)

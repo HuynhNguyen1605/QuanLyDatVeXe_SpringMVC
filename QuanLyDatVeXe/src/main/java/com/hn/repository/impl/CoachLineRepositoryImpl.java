@@ -3,6 +3,7 @@ package com.hn.repository.impl;
 
 import com.hn.pojo.CoachLine;
 import com.hn.repository.CoachLineRepository;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -92,5 +93,26 @@ public class CoachLineRepositoryImpl implements CoachLineRepository {
         Query q = session.createQuery("SELECT COUNT(*) FROM CoachLine ");
 
         return Integer.parseInt(q.getSingleResult().toString());
+    }
+
+    @Override
+    public CoachLine getById(int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        return session.get(CoachLine.class, id);
+    }
+
+    @Override
+    public boolean addOrUpdate(CoachLine coachLine) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            if (coachLine.getId() > 0)
+                session.update(coachLine);
+            else
+                session.save(coachLine);
+            return true;
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 }

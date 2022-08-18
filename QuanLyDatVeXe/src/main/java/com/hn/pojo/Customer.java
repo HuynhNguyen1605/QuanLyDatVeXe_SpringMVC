@@ -49,11 +49,11 @@ public class Customer implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "cmnd")
     private String cmnd;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customerId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private Collection<Ticket> ticketCollection;
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Account accountId;
+    private Account account;
 
     public Customer() {
     }
@@ -92,12 +92,12 @@ public class Customer implements Serializable {
         this.ticketCollection = ticketCollection;
     }
 
-    public Account getAccountId() {
-        return accountId;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setAccountId(Account accountId) {
-        this.accountId = accountId;
+    public void setAccount(Account accountId) {
+        this.account = accountId;
     }
 
     @Override

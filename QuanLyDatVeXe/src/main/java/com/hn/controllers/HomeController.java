@@ -5,6 +5,7 @@
  */
 package com.hn.controllers;
 
+import com.hn.pojo.Account;
 import com.hn.pojo.CoachLine;
 import com.hn.service.AccountService;
 import com.hn.service.CoachLineService;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -32,9 +34,9 @@ public class HomeController {
     private CoachLineService coachLineService;
 
     @RequestMapping("/")
-    public String index(Model model) {
+    public String trangbatdau(Model model) {
         model.addAttribute("sucMsg", model.asMap().get("sucMsg"));
-        return "landing-page";
+        return "trang-bat-dau";
     }
 
     @RequestMapping("/login")
@@ -51,8 +53,32 @@ public class HomeController {
         return "dat-ve";
     }
 
+    @RequestMapping("/gio-hang")
+    public String giohang(Model model) {
+        return "gio-hang";
+    }
+
     @RequestMapping("/dang-ky")
     public String dangKy(Model model) {
+        Account account = new Account();
+        account.setId(0);
+        account.setUserRole(Account.CUSTOMER);
+        model.addAttribute("account", account);
+        return "dang-ky";
+    }
+
+    @PostMapping("/dang-ky")
+    public String dangKyPostMethod(Model model,
+                                   @ModelAttribute(value = "account") Account account) {
+        account.setUserRole(Account.CUSTOMER);
+
+        if (accountService.addOrUpdate(account)) {
+            System.err.println("LUU THANH CONG");
+            return "redirect:/";
+        }
+        else
+            System.err.println("LUU THAT BAI");
+
         return "dang-ky";
     }
 

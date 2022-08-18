@@ -23,4 +23,14 @@ public class CoachLineServiceImpl implements CoachLineService {
     public int countCoachLine() {
         return this.coachLineRepository.countCoachLine();
     }
+
+    @Override
+    public boolean addOrUpdate(CoachLine coachLine) {
+        return this.coachLineRepository.addOrUpdate(coachLine);
+    }
+
+    @Override
+    public CoachLine getById(int id) {
+        return this.coachLineRepository.getById(id);
+    }
 }

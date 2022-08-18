@@ -8,7 +8,9 @@ import java.util.Map;
 
 public interface AccountService extends UserDetailsService {
 
-    Account getById(int userId);
+    Account getById(int id);
+
+    List<Account> getAccounts(Map<String, String> params, int page);
 
     boolean addOrUpdate(Account user);
 
@@ -30,4 +32,5 @@ public interface AccountService extends UserDetailsService {
 
     int getMaxItemsInPage();
 
+    int countAccount();
 }

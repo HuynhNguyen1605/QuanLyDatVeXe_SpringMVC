@@ -1,14 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
-  Date: 01/08/2022
-  Time: 10:09 CH
+  Date: 13/08/2022
+  Time: 2:08 CH
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
 <header class="bg-gradient-dark">
     <div class="page-header min-vh-75"
          style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80')">
@@ -33,43 +32,39 @@
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
-        <h1 class="text-center">Danh sách chuyến xe</h1>
         <div class="container">
-            <div class="input-group input-group-outline my-3">
-                <div class="input-group input-group-outline my-3">
-                    <label class="form-label">Nhập tên chuyến đi cần tìm</label>
-                    <input name="Search" class="form-control">
-                </div>
-                <button type="button" class="btn bg-gradient-light">
-                    <a href="<c:url value=""/>">
-                        <i class="fas fa-search me-1">Tìm kiếm</i>
+            <h1 class="text-center">THÔNG TIN GIỎ HÀNG CỦA BẠN</h1>
+            <div class="row">
+                <div class="col col-md-12">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên chuyến đi</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        </thead>
+                        <tbody id="">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="<c:url value="/"/> " class="btn bg-gradient-light">
+                        <i class="fas fa-reply"> Quay về trang chủ</i>
                     </a>
-                </button>
+                    <a href="" class="btn bg-gradient-light">
+                        <i class="fab fa-amazon-pay"> Thanh toán</i>
+                    </a>
+                </div>
             </div>
-            <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th class="th-sm">Tên chuyến đi
-                    </th>
-                    <th class="th-sm">Thời gian đi
-                    </th>
-                    <th class="th-sm">Thời gian đến
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${coachLineList}" var="coachLine">
-                    <tr>
-                        <td>${coachLine.name}</td>
-                        <td>${coachLine.departureDate}</td>
-                        <td>${coachLine.arrivalDate}</td>
-                        <td>
-                            <a href="<c:url value="/coach-line"/>?id=${coachLine.id}">Xem chi tiết</a>
-                        </td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
         </div>
     </section>
     <!-- END Section with four info areas left & one card right with image and waves -->

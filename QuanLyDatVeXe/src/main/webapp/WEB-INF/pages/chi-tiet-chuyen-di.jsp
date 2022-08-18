@@ -1,13 +1,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Admin
-  Date: 01/08/2022
-  Time: 10:09 CH
+  Date: 10/08/2022
+  Time: 2:23 CH
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@page contentType="text/html;charset=UTF-8" %>
 
 <header class="bg-gradient-dark">
     <div class="page-header min-vh-75"
@@ -33,43 +34,56 @@
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
-        <h1 class="text-center">Danh sách chuyến xe</h1>
         <div class="container">
-            <div class="input-group input-group-outline my-3">
-                <div class="input-group input-group-outline my-3">
-                    <label class="form-label">Nhập tên chuyến đi cần tìm</label>
-                    <input name="Search" class="form-control">
-                </div>
-                <button type="button" class="btn bg-gradient-light">
-                    <a href="<c:url value=""/>">
-                        <i class="fas fa-search me-1">Tìm kiếm</i>
-                    </a>
-                </button>
-            </div>
-            <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th class="th-sm">Tên chuyến đi
-                    </th>
-                    <th class="th-sm">Thời gian đi
-                    </th>
-                    <th class="th-sm">Thời gian đến
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${coachLineList}" var="coachLine">
+            <h1 class="text-center dark-color">THÔNG TIN CHI TIẾT CHUYẾN ĐI</h1>
+            <div class="container mt-4">
+                <table class="table table-hover">
+                    <tbody>
                     <tr>
-                        <td>${coachLine.name}</td>
-                        <td>${coachLine.departureDate}</td>
-                        <td>${coachLine.arrivalDate}</td>
-                        <td>
-                            <a href="<c:url value="/coach-line"/>?id=${coachLine.id}">Xem chi tiết</a>
+                        <th style="width: 30%" scope="row">ID</th>
+                        <td class="border-left">${coachLine.id}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Tên chuyến đi</th>
+                        <td class="border-left">${coachLine.name}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Giá</th>
+                        <td class="border-left">
+                            <fmt:setLocale value = "vi_VN"/>
+                            <fmt:formatNumber value = "${coachLine.price}" type = "currency"/>
                         </td>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                    <tr>
+                        <th style="width: 30%" scope="row">Thời gian đi</th>
+                        <td class="border-left">
+                            <fmt:formatDate value="${coachLine.departureDate}" pattern="HH:mm:ss - dd/MM/yyyy"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Thời gian đến</th>
+                        <td class="border-left">${coachLine.arrivalDate}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Số chỗ còn trống</th>
+                        <td class="border-left">${coachLine.remainingSeats}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="card-body text-center">
+                    <button type="button" class="btn bg-gradient-light">
+                        <a href="<c:url value="/dat-ve"/> ">
+                            <i class="fas fa-reply"> Quay lại</i>
+                        </a>
+                    </button>
+                    <button type="button" class="btn bg-gradient-light"
+                            onclick="clickDatVe(${currentUser.id}, ${coachLine.id})">
+                        <a href="<c:url value="/gio-hang"/> ">
+                            <i class="fas fa-shopping-cart"> Thêm vé vào giỏ hàng</i>
+                        </a>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
     <!-- END Section with four info areas left & one card right with image and waves -->
@@ -99,7 +113,6 @@
                         <div class="col-8">
                             <div class="input-group input-group-outline">
                                 <label class="form-label">Email Here...</label>
-                                <input type="text" class="form-control mb-sm-0">
                             </div>
                         </div>
                         <div class="col-4 ps-0">
@@ -121,3 +134,5 @@
     </section>
     <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
+
+<script src="<c:url value="/resources/js/dat-ve/datve.js"/>"></script>

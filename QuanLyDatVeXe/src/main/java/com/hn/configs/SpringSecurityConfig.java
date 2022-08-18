@@ -48,9 +48,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public Cloudinary cloudinary() {
         Cloudinary c = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "dxorabap0",
-                "api_key", "249227552583173",
-                "api_secret", "T4aMw9N8UUkaSkcpDA-vgORB_Qg",
+                "cloud_name", "huynhnguyen",
+                "api_key", "251592436659376",
+                "api_secret", "MXWW6Xk4krA9xwfn02ruVPmc01o",
                 "secure", true
         ));
 
@@ -61,7 +61,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public JavaMailSender configureJavaMailSender(){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
-        mailSender.setHost("");
+        mailSender.setHost("smtp.gmail.com");
         mailSender.setUsername("");
 //        mailSender.setPassword("");
         mailSender.setPassword("");
@@ -93,20 +93,20 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password");
 
-        http.formLogin().successHandler(this.loginHandler);
-//                .failureUrl("/login?error");
+        http.formLogin().successHandler(this.loginHandler)
+                .failureUrl("/login?error");
 
         http.logout().logoutSuccessHandler(this.logoutHandler);
 
         http.exceptionHandling().accessDeniedHandler(this.accessDenied);
 
         http.authorizeRequests()
-                .antMatchers("/").permitAll();
+                .antMatchers("/").permitAll()
 //                .antMatchers("/me/**").authenticated()
 //                .antMatchers("/api/**").authenticated()
-//                .antMatchers("/candidate/**").access("hasAnyRole('ROLE_UV')")
-//                .antMatchers("/employer/**").access("hasAnyRole('ROLE_NTD')")
-//                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+                .antMatchers("/admin/**").access("hasAuthority('admin')")
+                .antMatchers("/driver/**").access("hasAuthority('driver')")
+                .antMatchers("/customer/**").access("hasAuthority('customer')");
 
         http.csrf().disable();
     }

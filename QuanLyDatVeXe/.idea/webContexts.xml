@@ -4,7 +4,11 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chi-tiet-chuyen-di.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dat-ve.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/gio-hang.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quan-ly-tai-khoan.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/trang-bat-dau.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
       </map>
     </option>
   </component>

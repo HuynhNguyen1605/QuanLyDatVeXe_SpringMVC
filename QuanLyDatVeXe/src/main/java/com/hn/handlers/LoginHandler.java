@@ -31,10 +31,21 @@ public class LoginHandler implements AuthenticationSuccessHandler {
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response, Authentication a) throws IOException, ServletException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Account user = this.userDetailsService.getByUsername(authentication.getName());
-        request.getSession().setAttribute("currentUser", user);
-
+        Account account = this.userDetailsService.getByUsername(authentication.getName());
+        request.getSession().setAttribute("currentUser", account);
+        System.out.println("LOGIN SUCCESSFUL");
         String redirectUrl = request.getContextPath();
+        switch (account.getUserRole()) {
+            case Account.ADMIN:
+                redirectUrl = "admin";
+                break;
+            case Account.DRIVER:
+                redirectUrl = "driver";
+                break;
+            case Account.CUSTOMER:
+                redirectUrl = "customer";
+                break;
+        }
 
         response.sendRedirect(redirectUrl);
     }

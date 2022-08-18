@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
     <div class="container">
         <a class="navbar-brand  text-white " href="<c:url value="/" />" rel="tooltip"
-           title="Designed and Coded by Creative Tim" data-placement="bottom">
+           title="car ticket" data-placement="bottom">
             <i class="material-icons opacity-6 me-2 text-md">directions_bus</i>
             Car Ticket
         </a>
@@ -79,7 +79,7 @@
                 </li>
                 <li class="nav-item dropdown dropdown-hover mx-2">
                     <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                        id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                       id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="material-icons opacity-6 me-2 text-md">article</i>
                         Thông báo
                     </a>
@@ -102,7 +102,7 @@
                 </li>
                 <li class="nav-item ms-lg-auto">
                     <a class="nav-link nav-link-icon me-2"
-                       href="https://github.com/HuynhNguyen1605/QuanLyDatVeXe_SpringMVC" target="_blank">
+                       href="https://github.com/login" target="_blank">
                         <i class="fa fa-github me-1"></i>
                         <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip"
                            data-bs-placement="bottom" title="Đăng nhập bằng GitHub">Github</p>
@@ -117,15 +117,17 @@
 
                     <c:if test="${currentUser != null}">
                         <a href="#" class="nav-link border-radius-md">
-                            <span>${currentUser.username}</span>
-                        </a>
-                    </c:if>
-                    <c:if test="${currentUser != null}">
-                        <a href="<c:url value="/logout"/>" class="nav-link border-radius-md">
-                            <span>Đăng xuất</span>
+                            <span>${currentUser.fullname} (${currentUser.username})</span>
                         </a>
                     </c:if>
                 </li>
+                <c:if test="${currentUser != null}">
+                    <li class="nav-item my-auto ms-3 ms-lg-0">
+                        <a href="<c:url value="/logout"/>" class="nav-link border-radius-md">
+                            <span>Đăng xuất</span>
+                        </a>
+                    </li>
+                </c:if>
             </ul>
         </div>
     </div>

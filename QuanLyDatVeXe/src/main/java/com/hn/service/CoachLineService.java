@@ -8,4 +8,8 @@ import java.util.Map;
 public interface CoachLineService {
     List<CoachLine> getCoachLines(Map<String, String> params, int page);
     int countCoachLine();
+
+    boolean addOrUpdate(CoachLine coachLine);
+
+    CoachLine getById(int id);
 }

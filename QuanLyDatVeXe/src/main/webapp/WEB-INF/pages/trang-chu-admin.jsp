@@ -1,13 +1,12 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
-  Date: 01/08/2022
-  Time: 10:09 CH
+  Date: 17/08/2022
+  Time: 4:43 CH
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header class="bg-gradient-dark">
     <div class="page-header min-vh-75"
@@ -33,43 +32,47 @@
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
-        <h1 class="text-center">Danh sách chuyến xe</h1>
         <div class="container">
-            <div class="input-group input-group-outline my-3">
-                <div class="input-group input-group-outline my-3">
-                    <label class="form-label">Nhập tên chuyến đi cần tìm</label>
-                    <input name="Search" class="form-control">
+            <h1 class="text-center">TRANG CHỦ ADMIN</h1>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="card card-profile mt-4">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                                <a href="">
+                                    <div class="p-3 pe-md-0">
+                                        <img class="w-100 border-radius-md shadow-lg"
+                                             src="" width="160" height="160" alt="image">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-6 col-12 my-auto">
+                                <div class="card-body ps-lg-0">
+                                    <h2 class="mb-0">Quản lý người dùng</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn bg-gradient-light">
-                    <a href="<c:url value=""/>">
-                        <i class="fas fa-search me-1">Tìm kiếm</i>
-                    </a>
-                </button>
+                <div class="col-lg-6 col-12">
+                    <div class="card card-profile mt-lg-4 mt-5">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                                <a href="">
+                                    <div class="p-3 pe-md-0">
+                                        <img class="w-100 border-radius-md shadow-lg" src="" width="160" height="160" alt="image">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-6 col-12 my-auto">
+                                <div class="card-body ps-lg-0">
+                                    <h2 class="mb-0">Quản lý chuyến xe</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th class="th-sm">Tên chuyến đi
-                    </th>
-                    <th class="th-sm">Thời gian đi
-                    </th>
-                    <th class="th-sm">Thời gian đến
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${coachLineList}" var="coachLine">
-                    <tr>
-                        <td>${coachLine.name}</td>
-                        <td>${coachLine.departureDate}</td>
-                        <td>${coachLine.arrivalDate}</td>
-                        <td>
-                            <a href="<c:url value="/coach-line"/>?id=${coachLine.id}">Xem chi tiết</a>
-                        </td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
         </div>
     </section>
     <!-- END Section with four info areas left & one card right with image and waves -->

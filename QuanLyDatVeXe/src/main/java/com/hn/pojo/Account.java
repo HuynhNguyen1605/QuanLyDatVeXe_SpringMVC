@@ -5,19 +5,12 @@
  */
 package com.hn.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -44,6 +37,10 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Account.findByUserRole", query = "SELECT a FROM Account a WHERE a.userRole = :userRole")})
 public class Account implements Serializable {
 
+    public static final String ADMIN = "admin";
+    public static final String CUSTOMER = "customer";
+    public static final String DRIVER = "driver";
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,9 +57,15 @@ public class Account implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "password")
     private String password;
+
     @Size(max = 300)
     @Column(name = "avatar")
     private String avatar;
+
+    @Transient
+    @JsonIgnore
+    private MultipartFile file;
+
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 100)
     @Column(name = "email")
@@ -79,17 +82,15 @@ public class Account implements Serializable {
     private String address;
     @Column(name = "gender")
     private Short gender;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
+    @Basic
     @Column(name = "user_role")
     private String userRole;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
-    private Collection<Driver> driverCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
-    private Collection<Staff> staffCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
-    private Collection<Customer> customerCollection;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
+//    private Collection<Driver> driverCollection;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
+//    private Collection<Staff> staffCollection;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
+//    private Collection<Customer> customerCollection;
 
     public Account() {
     }
@@ -103,6 +104,14 @@ public class Account implements Serializable {
         this.username = username;
         this.password = password;
         this.userRole = userRole;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 
     public Integer getId() {
@@ -185,32 +194,32 @@ public class Account implements Serializable {
         this.userRole = userRole;
     }
 
-    @XmlTransient
-    public Collection<Driver> getDriverCollection() {
-        return driverCollection;
-    }
+//    @XmlTransient
+//    public Collection<Driver> getDriverCollection() {
+//        return driverCollection;
+//    }
+//
+//    public void setDriverCollection(Collection<Driver> driverCollection) {
+//        this.driverCollection = driverCollection;
+//    }
+//
+//    @XmlTransient
+//    public Collection<Staff> getStaffCollection() {
+//        return staffCollection;
+//    }
+//
+//    public void setStaffCollection(Collection<Staff> staffCollection) {
+//        this.staffCollection = staffCollection;
+//    }
+//
+//    @XmlTransient
+//    public Collection<Customer> getCustomerCollection() {
+//        return customerCollection;
+//    }
 
-    public void setDriverCollection(Collection<Driver> driverCollection) {
-        this.driverCollection = driverCollection;
-    }
-
-    @XmlTransient
-    public Collection<Staff> getStaffCollection() {
-        return staffCollection;
-    }
-
-    public void setStaffCollection(Collection<Staff> staffCollection) {
-        this.staffCollection = staffCollection;
-    }
-
-    @XmlTransient
-    public Collection<Customer> getCustomerCollection() {
-        return customerCollection;
-    }
-
-    public void setCustomerCollection(Collection<Customer> customerCollection) {
-        this.customerCollection = customerCollection;
-    }
+//    public void setCustomerCollection(Collection<Customer> customerCollection) {
+//        this.customerCollection = customerCollection;
+//    }
 
     @Override
     public int hashCode() {

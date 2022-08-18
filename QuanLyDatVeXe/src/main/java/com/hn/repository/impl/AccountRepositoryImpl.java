@@ -5,6 +5,7 @@ import com.hn.repository.AccountRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,8 @@ public class AccountRepositoryImpl implements AccountRepository {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
+    @Autowired
+    private Environment env;
 
     private final int maxItemsInPage = 10;
 
@@ -70,6 +73,57 @@ public class AccountRepositoryImpl implements AccountRepository {
 //        org.hibernate.query.Query q = session.createQuery(query);
 //        return (Account) q.getSingleResult();
     }
+
+    @Override
+    public List<Account> getAccounts(Map<String, String> params, int page) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder b = session.getCriteriaBuilder();
+        CriteriaQuery<Account> q = b.createQuery(Account.class);
+        Root root = q.from(Account.class);
+        q.select(root);
+        if (params != null) {
+            List<Predicate> predicates = new ArrayList<>();
+            String kw = params.get("kw");
+            if (kw != null && !kw.isEmpty()) {
+                Predicate p = b.like(root.get("fullname").as(String.class), String.format("%%%s%%", kw));
+                predicates.add(p);
+            }
+
+            String us = params.get("username");
+            if (us != null) {
+                Predicate p = b.greaterThanOrEqualTo(root.get("username").as(Long.class), Long.parseLong(us));
+                predicates.add(p);
+            }
+
+            String em = params.get("email");
+            if (em != null) {
+                Predicate p = b.greaterThanOrEqualTo(root.get("email").as(Long.class), Long.parseLong(em));
+                predicates.add(p);
+            }
+
+            String dc = params.get("diachi");
+            if (dc != null) {
+                Predicate p = b.greaterThanOrEqualTo(root.get("address").as(Long.class), Long.parseLong(dc));
+                predicates.add(p);
+            }
+
+            String tu = params.get("loaitaikhoan");
+            if (tu != null) {
+                Predicate p = b.greaterThanOrEqualTo(root.get("user_role").as(Long.class), Long.parseLong(tu));
+                predicates.add(p);
+            }
+            q.where(predicates.toArray(Predicate[]::new));
+        }
+        org.hibernate.query.Query query = session.createQuery(q);
+        if (page > 0) {
+            int size = 0;
+            int start = (page - 1) * size;
+            query.setFirstResult(start);
+            query.setMaxResults(size);
+        }
+        return query.getResultList();
+    }
+
 
     @Override
     public List<Account> getByRole(String role, int page, int active) {

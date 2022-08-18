@@ -1,18 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<!--
-=========================================================
-* Material Kit 2 - v3.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-kit
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="vi" itemscope itemtype="http://schema.org/WebPage">
 
@@ -37,7 +26,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="<c:url value="/resources/css/material-kit.css?v=3.0.4"/>" rel="stylesheet"/>
     <link href="<c:url value="/resources/css/register.css"/> " rel="stylesheet">
-    <link href="<c:url value="/resources/css/nicepage.css"/> " rel="stylesheet">
+    <link href="<c:url value="/resources/css/nicepgae.css"/> " rel="stylesheet">
 
 </head>
 

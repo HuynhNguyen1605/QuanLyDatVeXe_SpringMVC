@@ -49,7 +49,7 @@ public class Staff implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "position")
     private String position;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "staffId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "staff")
     private Collection<Ticket> ticketCollection;
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)

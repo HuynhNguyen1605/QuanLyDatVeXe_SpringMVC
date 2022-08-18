@@ -13,6 +13,8 @@ public interface AccountRepository {
 
     Account getByUsername(String username);
 
+    List<Account> getAccounts(Map<String, String> params, int page);
+
     List<Account> getByRole(String role, int page, int active);
 
     List<Account> getUsers(String username, int page);
