@@ -61,9 +61,14 @@ and open the template in the editor.
         <put-attribute name="content" value="/WEB-INF/pages/sua-tai-khoan.jsp" />
     </definition>
 
-    <definition name="tai-xe" extends="baseLayout">
+    <definition name="trang-chu-tai-xe" extends="baseLayout">
         <put-attribute name="title" value="Trang chủ tài xế" />
-        <put-attribute name="content" value="/WEB-INF/pages/tai-xe.jsp" />
+        <put-attribute name="content" value="/WEB-INF/pages/trang-chu-tai-xe.jsp" />
+    </definition>
+
+    <definition name="trang-chu-dat-ve" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ đặt vé" />
+        <put-attribute name="content" value="/WEB-INF/pages/trang-chu-dat-ve.jsp" />
     </definition>
 
     <definition name="trang-chu-admin" extends="baseLayout">

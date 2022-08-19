@@ -28,57 +28,50 @@
     <!-- Section with four info areas left  & one card right with image and waves -->
     <section class="py-7">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="row justify-content-start">
-                        <div class="col-md-6">
-                            <div class="info">
-                                <i class="material-icons text-3xl text-gradient text-info mb-3">public</i>
-                                <h5>2000+ nhà xe chất lượng cao</h5>
-                                <p>5000+ tuyến đường trên toàn quốc, chủ động và đa dạng lựa chọn.</p>
+            <h1 class="text-center">Trang chủ tài xế</h1>
+            <div class="row">
+                <div class="table-responsive table-hover">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <table class="table table-striped table-bordered table-sm table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Tên đăng nhâp</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Email</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Số điện thoại</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Ảnh đại diện</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Họ và tên</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Địa chỉ</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Giới tính</th>
+                                        <td>nnhatsang</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 30%" scope="row">Loại tài khoản</th>
+                                        <td></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info">
-                                <i class="material-icons text-3xl text-gradient text-info mb-3">payments</i>
-                                <h5>Đặt vé dễ dàng</h5>
-                                <p>Đặt vé chỉ với 60s. Chọn xe yêu thích cực nhanh và thuận tiện.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-start mt-4">
-                        <div class="col-md-6">
-                            <div class="info">
-                                <i class="material-icons text-3xl text-gradient text-info mb-3">apps</i>
-                                <h5>Nhiều ưu đãi</h5>
-                                <p>Hàng ngàn ưu đãi cực chất độc quyền tại VeXeRe.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info">
-                                <i class="material-icons text-3xl text-gradient text-info mb-3">3p</i>
-                                <h5>Hỗ trợ mọi lúc mọi nơi</h5>
-                                <p>Có đội ngũ hoạt động 24/24 phục vụ mọi lúc cho khách hàng.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <a class="d-block blur-shadow-image">
-                                <img src="https://images.unsplash.com/photo-1498887960847-2a5e46312788?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
-                                     alt="img-colored-shadow" class="img-fluid border-radius-lg">
-                            </a>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="font-weight-normal">
-                                Hãy tìm kiếm chuyến đi của bạn
-                            </h4>
-                            <a href="<c:url value="/dat-ve"/>">
-                                <button type=" button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Đặt vé ngay</button>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -199,38 +192,38 @@
             </div>
         </div>
     </section>
-<!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
-<section class="my-5 pt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 m-auto">
-                <h4>Be the first to see the news</h4>
-                <p class="mb-4">
-                    Your company may not be in the software business,
-                    but eventually, a software company will be in your business.
-                </p>
-                <div class="row">
-                    <div class="col-8">
-                        <div class="input-group input-group-outline">
-                            <label class="form-label">Email Here...</label>
-                            <input type="text" class="form-control mb-sm-0">
+    <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+    <section class="my-5 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <h4>Be the first to see the news</h4>
+                    <p class="mb-4">
+                        Your company may not be in the software business,
+                        but eventually, a software company will be in your business.
+                    </p>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">Email Here...</label>
+                                <input type="text" class="form-control mb-sm-0">
+                            </div>
+                        </div>
+                        <div class="col-4 ps-0">
+                            <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">
+                                Subscribe
+                            </button>
                         </div>
                     </div>
-                    <div class="col-4 ps-0">
-                        <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">
-                            Subscribe
-                        </button>
-                    </div>
                 </div>
-            </div>
-            <div class="col-md-5 ms-auto">
-                <div class="position-relative">
-                    <img class="max-width-50 w-100 position-relative z-index-2" src="https://chothuexedulich.org/wp-content/uploads/2020/12/thue-xe-giuong-nam-limousine-gia-re-tai-tphcm-6.jpg"
-                         alt="image">
+                <div class="col-md-5 ms-auto">
+                    <div class="position-relative">
+                        <img class="max-width-50 w-100 position-relative z-index-2" src="https://chothuexedulich.org/wp-content/uploads/2020/12/thue-xe-giuong-nam-limousine-gia-re-tai-tphcm-6.jpg"
+                             alt="image">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+    </section>
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>

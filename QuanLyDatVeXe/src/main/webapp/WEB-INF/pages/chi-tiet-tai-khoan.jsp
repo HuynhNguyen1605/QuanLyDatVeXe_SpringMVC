@@ -122,6 +122,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
     </section>
     <!-- END Section with four info areas left & one card right with image and waves -->
     <!-- -------- START Features w/ pattern background & stats & rocket -------- -->

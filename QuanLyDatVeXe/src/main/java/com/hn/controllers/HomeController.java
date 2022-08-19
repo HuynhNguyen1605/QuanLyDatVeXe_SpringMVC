@@ -45,7 +45,6 @@ public class HomeController {
     }
 
     @RequestMapping("/dat-ve")
-
     public String datVe(Model model) {
         List<CoachLine> coachLineList = coachLineService.getCoachLines(null, 0);
 
@@ -54,7 +53,7 @@ public class HomeController {
     }
 
     @RequestMapping("/gio-hang")
-    public String giohang(Model model) {
+    public String giohang(Model model){
         return "gio-hang";
     }
 

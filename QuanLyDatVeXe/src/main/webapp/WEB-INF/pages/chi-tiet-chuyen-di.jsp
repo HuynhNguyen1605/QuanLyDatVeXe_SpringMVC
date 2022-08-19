@@ -62,7 +62,9 @@
                     </tr>
                     <tr>
                         <th style="width: 30%" scope="row">Thời gian đến</th>
-                        <td class="border-left">${coachLine.arrivalDate}</td>
+                        <td class="border-left">
+                            <fmt:formatDate value="${coachLine.arrivalDate}" pattern="HH:mm:ss - dd/MM/yyyy"/>
+                        </td>
                     </tr>
                     <tr>
                         <th style="width: 30%" scope="row">Số chỗ còn trống</th>

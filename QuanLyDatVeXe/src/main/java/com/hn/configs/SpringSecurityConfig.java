@@ -57,28 +57,28 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         return c;
     }
 
-    @Bean
-    public JavaMailSender configureJavaMailSender(){
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setUsername("");
+//    @Bean
+//    public JavaMailSender configureJavaMailSender(){
+//        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+//
+//        mailSender.setHost("smtp.gmail.com");
+//        mailSender.setUsername("");
+////        mailSender.setPassword("");
 //        mailSender.setPassword("");
-        mailSender.setPassword("");
-
-        mailSender.setPort(587);
-
-        Properties mailProperties = new Properties();
-        mailProperties.put("mail.smtp.starttls.enable", "true");
-        mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        mailProperties.put("mail.smtp.auth", "true");
-        mailProperties.put("mail.debug", "true");
-        mailProperties.put("mail.transport,protocol", "smtp");
-
-        mailSender.setJavaMailProperties(mailProperties);
-
-        return mailSender;
-    }
+//
+//        mailSender.setPort(587);
+//
+//        Properties mailProperties = new Properties();
+//        mailProperties.put("mail.smtp.starttls.enable", "true");
+//        mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+//        mailProperties.put("mail.smtp.auth", "true");
+//        mailProperties.put("mail.debug", "true");
+//        mailProperties.put("mail.transport,protocol", "smtp");
+//
+//        mailSender.setJavaMailProperties(mailProperties);
+//
+//        return mailSender;
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

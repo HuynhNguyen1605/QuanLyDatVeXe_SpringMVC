@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DriverController {
 
     @RequestMapping("")
-    public String driverHome(Model model) {
-        return "tai-xe";
+    public String driverHome(){
+        return "trang-chu-tai-xe";
     }
 }
